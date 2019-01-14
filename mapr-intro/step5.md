@@ -4,4 +4,4 @@ Run Hadoop: `hadoop jar /opt/mapr/hadoop/hadoop-*/share/hadoop/mapreduce/hadoop-
 
 Run Spark: `/opt/mapr/spark/spark-*/bin/run-example --master yarn SparkPi 1`{{execute}}
 
-Distributed storage and distributed analytics have traditionally required seperate clusters but with MapR they operate on a single all-purpose cluster, thereby reducing cluster sprawl, improving performance, simplifying administration, and lowering hardware costs.
+Distributed storage and analytical workloads have traditionally required separate clusters but with MapR they operate on a single all-purpose cluster, thereby reducing cluster sprawl, improving performance, simplifying administration, and lowering hardware costs.
