@@ -6,7 +6,7 @@ The MapR data platform consists of the following three core components:
 
 In this tutorial you will explore each of these components on a single-node MapR cluster.
 
-<p align="center"><img src="https://github.com/iandow/katacoda-scenarios/blob/master/mapr-intro/assets/mapr_logo.png?raw=true" width=40%></p>
+<p align="center"><img src="https://github.com/mapr-demos/katacoda-scenarios/blob/master/mapr-intro/assets/mapr_logo.png?raw=true" width=40%></p>
 
 Before you begin you need to authenticate. Run the following command to login: 
 

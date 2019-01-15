@@ -3,5 +3,5 @@ The MapR Data Platform integrates Apache Hadoop, Apache Spark, and Apache Drill 
 In this scenario you will become familiar with the MapR data platform by interacting with a single-node MapR cluster. 
 
 <center>
-	<a href=https://mapr.com/docs/61/MapROverview/c_overview_intro.html><img src="https://github.com/iandow/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart.png?raw=true" width=50%></a>
+	<a href=https://mapr.com/docs/61/MapROverview/c_overview_intro.html><img src="https://github.com/mapr-demos/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart.png?raw=true" width=50%></a>
 </center>
