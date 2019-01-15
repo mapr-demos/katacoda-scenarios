@@ -3,7 +3,7 @@
     "title": "Introduction to MapR",
     "description": "Illustrates how to use managing files, tables, and streams in the MapR data platform.",
     "difficulty": "beginner",
-    "time": "10 minutes",
+    "time": "15 minutes",
     "details": {
         "steps": [
             {
