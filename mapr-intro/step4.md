@@ -29,4 +29,4 @@ Also try piping the consumer to a utility for sorting stream records by source I
 
 `/opt/mapr/kafka/kafka-*/bin/kafka-console-consumer.sh --topic /tmp/mystream:mytopic --from-beginning --bootstrap-server this.will.be.ignored:9092 --max-messages 100 | sort -k3 | uniq -c -3 | sort -n`{{execute}}
 
-
+That command counts the most active network connections which occurred during our tcpdump network capture.
