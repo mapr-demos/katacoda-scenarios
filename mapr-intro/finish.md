@@ -5,6 +5,6 @@ Would you like to learn more about MapR? Check out our blog, [In Search of a Dat
 If you'd like to speak with MapR, [contact us](https://mapr.com/company/contact-mapr/#contact-us)!
 
 <center>
-	<a href=https://mapr.com/docs/61/MapROverview/c_overview_intro.html><img src="https://github.com/iandow/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart-Main.png?raw=true" width=60%></a>
+	<a href=https://mapr.com/docs/61/MapROverview/c_overview_intro.html><img src="https://github.com/iandow/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart.png?raw=true" width=60%></a>
 </center>
 
