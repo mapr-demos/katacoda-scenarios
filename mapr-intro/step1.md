@@ -17,7 +17,7 @@ Before you begin you need to tell the system who you are. Run the following comm
 
 `maprlogin password -user mapr`{{execute}} 
 
-This is a toy cluster that won't last long so you can use the password `mapr`{{execute}}. In a real cluster, you would get a user account would use a more realistically complex password.
+This is a toy cluster that won't last long, so you can use the password `mapr`{{execute}}. In a real cluster you would authenticate using Kerberos granted credentials or using a realistically complex password.
 
 Verify that you've authenticated yourself to the cluster by running the following [maprcli](https://mapr.com/docs/61/ReferenceGuide/maprcli-REST-API-Syntax.html) command: `maprcli node list -columns ip`{{execute}}. 
 
