@@ -1,6 +1,6 @@
 # Interactive Katacoda Scenarios
 
-[![](http://shields.katacoda.com/katacoda/iandow/count.svg)](https://www.katacoda.com/iandow "Get your profile on Katacoda.com")
+[![](http://shields.katacoda.com/katacoda/mapr/count.svg)](https://www.katacoda.com/mapr "Get your profile on Katacoda.com")
 
 Visit https://www.katacoda.com/iandow to view the profile and interactive scenarios
 
