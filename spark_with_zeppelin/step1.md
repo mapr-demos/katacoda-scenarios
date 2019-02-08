@@ -6,5 +6,4 @@ This is a boilerplate tutorial for Spark and Zeppelin. The Spark interpretter in
 2. Open the Zeppelin tab
 3. Create a new notebook in Zeppelin
 4. Type `sc` in the Zeppelin notebook to see the SparkContext object
-5. Open the Yarn tab and see the job you just submitted.
 
