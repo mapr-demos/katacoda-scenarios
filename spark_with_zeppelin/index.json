@@ -7,25 +7,8 @@
     "details": {
         "steps": [
             {
-                "title": "Step 1 - Login",
+                "title": "Step 1 - Open Zeppelin",
                 "text": "step1.md",
-                "verify": "step1-verify.sh"
-            },
-            {
-                "title": "Step 2 - The MapR Filesystem",
-                "text": "step2.md"
-            },
-            {
-                "title": "Step 3 - The MapR Database",
-                "text": "step3.md"
-            },
-            {
-                "title": "Step 4 - The MapR Event Store for Apache Kafka",
-                "text": "step4.md"
-            },
-            {
-                "title": "Step 5 - Converged Storage and Analytics",
-                "text": "step5.md"
             }
         ],
         "intro": {
