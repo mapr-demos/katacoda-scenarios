@@ -43,7 +43,7 @@
         "showdashboard": true,
         "dashboards": [
             {"name": "Zeppelin", "port": 7443},
-            {"name": "MapR Control System", "port": 8443}
+            {"name": "MapR Control System", "port": 8443},
             {"name": "Yarn Manager", "port": 8080}
         ],
         "uilayout": "terminal-iframe",
