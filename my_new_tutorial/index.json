@@ -43,7 +43,8 @@
         "showdashboard": true,
         "dashboards": [
             {"name": "Dashboard", "port": 8443},
-            {"name": "Drill", "port": 8047}
+            {"name": "Drill", "port": 8047},
+            {"name": "Zeppelin", "port": 8080}
         ],
         "uilayout": "terminal-iframe",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
