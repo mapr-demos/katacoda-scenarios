@@ -1,6 +1,6 @@
 {
     "pathwayTitle": "Intro to MapR",
-    "title": "Carol TEst",
+    "title": "Zeppelin + Spark Boilerplate",
     "description": "Illustrates how to use managing files, tables, and streams in the MapR data platform.",
     "difficulty": "beginner",
     "time": "15 minutes",
@@ -42,9 +42,9 @@
         "hidefinish": false,
         "showdashboard": true,
         "dashboards": [
-            {"name": "Dashboard", "port": 8443},
-            {"name": "Drill", "port": 8047},
-            {"name": "Zeppelin", "port": 8080}
+            {"name": "Zeppelin", "port": 7443},
+            {"name": "MapR Control System", "port": 8443}
+            {"name": "Yarn Manager", "port": 8080}
         ],
         "uilayout": "terminal-iframe",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
