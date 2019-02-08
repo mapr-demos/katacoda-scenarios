@@ -1,4 +1,4 @@
-This is a boilerplate tutorial for Spark and Zeppelin. The Spark interpretter in Zeppelin has already been configured to run on YARN.
+This is a boilerplate tutorial for Spark and Zeppelin. The Spark interpretter in Zeppelin is preconfigured to run on YARN.
 
 ***It will take about 5 minutes for Zeppelin to download and install (see init.sh)***
 
