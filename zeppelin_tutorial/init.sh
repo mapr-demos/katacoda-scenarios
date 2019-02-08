@@ -11,7 +11,6 @@ wget -P /opt http://apache.claz.org/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-n
 tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-netinst.tgz
 mv /opt/zeppelin-0.8.1-bin-netinst /opt/zeppelin
 echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
-echo "export ZEPPELIN_SSL_PORT=7443" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export MASTER=yarn-client" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export SPARK_HOME=/opt/mapr/spark/spark-*" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-*" >> /opt/zeppelin/conf/zeppelin-env.sh

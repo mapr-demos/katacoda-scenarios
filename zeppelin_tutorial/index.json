@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Intro to MapR",
-    "title": "Zeppelin + Spark Boilerplate",
-    "description": "Illustrates how to use managing files, tables, and streams in the MapR data platform.",
+    "title": "Spark with Zeppelin",
+    "description": "Illustrates how to Spark with Zeppelin on YARN in MapR.",
     "difficulty": "beginner",
     "time": "15 minutes",
     "details": {
@@ -42,7 +42,7 @@
         "hidefinish": false,
         "showdashboard": true,
         "dashboards": [
-            {"name": "Zeppelin", "port": 7443},
+            {"name": "Zeppelin", "port": 7000},
             {"name": "MapR Control System", "port": 8443},
             {"name": "Yarn Manager", "port": 8080}
         ],
