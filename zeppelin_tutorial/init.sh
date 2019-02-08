@@ -12,8 +12,8 @@ tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-netinst.tgz
 mv /opt/zeppelin-0.8.1-bin-netinst /opt/zeppelin
 echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export MASTER=yarn-client" >> /opt/zeppelin/conf/zeppelin-env.sh
-echo "export SPARK_HOME=/opt/mapr/spark/spark-*" >> /opt/zeppelin/conf/zeppelin-env.sh
-echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-*" >> /opt/zeppelin/conf/zeppelin-env.sh
-
+echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "mapr" | maprlogin password -user mapr
 /opt/zeppelin/bin/zeppelin-daemon.sh start
 
