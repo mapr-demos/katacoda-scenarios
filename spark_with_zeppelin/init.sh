@@ -16,4 +16,5 @@ echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppe
 echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "mapr" | maprlogin password -user mapr
 /opt/zeppelin/bin/zeppelin-daemon.sh start
-
+wget https://raw.githubusercontent.com/mapr-demos/predictive-maintenance/master/notebooks/zeppelin/RNN%20predictions%20on%20MapR-DB%20data%20via%20Drill.json
+curl -X POST http://localhost:7000/api/notebook/import -d @"RNN predictions on MapR-DB data via Drill.json"
