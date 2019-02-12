@@ -26,16 +26,21 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
     sleep 1
 done
 
-#add a license
+####################################################
+# Install stuff needed for the Forest Fire notebook
+####################################################
+sudo yum install python-pip -y
+sudo pip install dbfpy requests pandas bs4 websocket-client
+wget https://github.com/joewalnes/websocketd/releases/download/v0.3.0/websocketd.0.3.0.i386.rpm
+sudo rpm -ivh websocketd.0.3.0.i386.rpm
+
+# add a mapr license needed for snapshots
 wget -P /root -O license.txt https://gist.githubusercontent.com/iandow/03198d1d42c117c564eca5e00033bd36/raw/cd8bac1f3ea56a1862f920aa4d48511a073fcb4e/license.txt
 maprcli license add -license /root/license.txt -is_file true
 
-# Download sample Zeppelin notebook
-wget -P /root/ https://raw.githubusercontent.com/mapr-demos/predictive-maintenance/master/notebooks/zeppelin/RNN%20predictions%20on%20MapR-DB%20data%20via%20Drill.json
-wget -P /root/ https://raw.githubusercontent.com/mapr-demos/mapr-sparkml-streaming-wildfires/master/notebook/Forest%20Fire%20Prediction.json
-# Import notebook into Zeppelin
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/RNN predictions on MapR-DB data via Drill.json"
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
+git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
 
+# Import notebook into Zeppelin
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/mapr-sparkml-streaming-wildfires/notebook/Forest Fire Prediction.json"
 
 
