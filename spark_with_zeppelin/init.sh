@@ -1,20 +1,30 @@
 #!/bin/bash
-yum install tcpdump mapr-posix-client-* -y
+
+# Install MapR POSIX client in order to use MapR via NFS
+yum install mapr-posix-client-* -y
 systemctl restart mapr-posix-client-container
-#wget -q -O yelp_academic_dataset_business.json https://www.dropbox.com/s/1vtjirlxw0av07l/yelp_academic_dataset_business.json?dl=0 &
-#wget -q -O yelp_academic_dataset_tip.json https://www.dropbox.com/s/btt66nhdwytrh2u/yelp_academic_dataset_tip.json?dl=0
-git clone https://github.com/mapr-demos/mapr-db-60-getting-started
+
+# Disable annoying console email notifications
 postfix stop
 rm -f /var/spool/mail/root
 
+# Download Zeppelin
 wget -P /opt http://apache.claz.org/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-netinst.tgz
 tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-netinst.tgz
 mv /opt/zeppelin-0.8.1-bin-netinst /opt/zeppelin
+# Configure Zeppelin for YARN, Spark, and webui port 7000
 echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export MASTER=yarn-client" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "mapr" | maprlogin password -user mapr
+# Start Zeppelin
 /opt/zeppelin/bin/zeppelin-daemon.sh start
-wget https://raw.githubusercontent.com/mapr-demos/predictive-maintenance/master/notebooks/zeppelin/RNN%20predictions%20on%20MapR-DB%20data%20via%20Drill.json
-curl -X POST http://localhost:7000/api/notebook/import -d @"RNN predictions on MapR-DB data via Drill.json"
+# Wait for Zeppelin start to complete
+until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api); do
+    sleep 1
+done
+# Download sample Zeppelin notebook
+wget -P /root/ https://raw.githubusercontent.com/mapr-demos/predictive-maintenance/master/notebooks/zeppelin/RNN%20predictions%20on%20MapR-DB%20data%20via%20Drill.json
+# Import notebook into Zeppelin
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/RNN predictions on MapR-DB data via Drill.json"
