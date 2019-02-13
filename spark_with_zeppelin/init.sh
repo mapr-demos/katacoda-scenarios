@@ -22,7 +22,6 @@ tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-all.tgz
 mv /opt/zeppelin-0.8.1-bin-all /opt/zeppelin
 # Configure Zeppelin for YARN, Spark, and webui port 7000
 echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
-echo "export MASTER=yarn-client" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
 
