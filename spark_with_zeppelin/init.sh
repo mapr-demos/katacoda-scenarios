@@ -39,6 +39,10 @@ sudo yum install python-pip -y
 sudo pip install dbfpy requests pandas bs4 websocket-client
 wget https://github.com/joewalnes/websocketd/releases/download/v0.3.0/websocketd.0.3.0.i386.rpm
 sudo rpm -ivh websocketd.0.3.0.i386.rpm
+git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
+cp mapr-sparkml-streaming-wildfires/ml_input_stream.sh mapr-sparkml-streaming-wildfires/ml_output_stream.sh /root
+websocketd --port=3433 --dir=/root --devconsole &
+disown
 
 # add a mapr license needed for snapshots
 wget -P /root -O license.txt https://gist.githubusercontent.com/iandow/03198d1d42c117c564eca5e00033bd36/raw/cd8bac1f3ea56a1862f920aa4d48511a073fcb4e/license.txt
@@ -50,12 +54,8 @@ cp assets/Forest*.json /root
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
 
 # Build the jar file for the spark app used in the notebook
-git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
-cd mapr-sparkml-streaming-wildfires
+cd /root/mapr-sparkml-streaming-wildfires
 yum install maven -y
 mvn package
 cp target/mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar /root
 
-cp ml_input_stream.sh ml_output_stream.sh /root
-websocketd --port=3433 --dir=. --devconsole &
-disown
