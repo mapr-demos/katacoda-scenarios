@@ -26,6 +26,11 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
     sleep 1
 done
 
+# Remove Hive metastore in order to avoid some wierd errors
+rm -rf ../bin/metastore_db/
+/opt/mapr/hive/hive-2.3/bin/hive --service metastore --start
+
+
 ####################################################
 # Install stuff needed for the Forest Fire notebook
 ####################################################
