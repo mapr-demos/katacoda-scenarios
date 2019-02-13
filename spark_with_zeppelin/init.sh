@@ -44,11 +44,18 @@ sudo rpm -ivh websocketd.0.3.0.i386.rpm
 wget -P /root -O license.txt https://gist.githubusercontent.com/iandow/03198d1d42c117c564eca5e00033bd36/raw/cd8bac1f3ea56a1862f920aa4d48511a073fcb4e/license.txt
 maprcli license add -license /root/license.txt -is_file true
 
-git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
-
 # Import notebook into Zeppelin
 wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
 cp assets/Forest*.json /root
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
 
+# Build the jar file for the spark app used in the notebook
+git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
+cd mapr-sparkml-streaming-wildfires
+yum install maven -y
+mvn package
+cp target/mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar /root
 
+cp ml_input_stream.sh ml_output_stream.sh /root
+websocketd --port=3433 --dir=. --devconsole &
+disown
