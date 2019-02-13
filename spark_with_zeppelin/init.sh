@@ -27,6 +27,7 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
 done
 
 # Remove Hive metastore in order to avoid some wierd errors
+/opt/mapr/hive/hive-2.3/bin/hive --service metastore --stop
 rm -rf ../bin/metastore_db/
 /opt/mapr/hive/hive-2.3/bin/hive --service metastore --start
 
