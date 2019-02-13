@@ -47,6 +47,7 @@ maprcli license add -license /root/license.txt -is_file true
 git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
 
 # Import notebook into Zeppelin
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/mapr-sparkml-streaming-wildfires/notebook/Forest Fire Prediction.json"
+cp assets/Forest*.json /root
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
 
 
