@@ -5,7 +5,7 @@ echo "mapr" | maprlogin password -user mapr
 
 # Remove Hive metastore in order to avoid some wierd errors
 /opt/mapr/hive/hive-2.3/bin/hive --service metastore --stop
-rm -rf ../bin/metastore_db/
+rm -rf /opt/mapr/hive/hive-2.3/bin/metastore_db/
 /opt/mapr/hive/hive-2.3/bin/hive --service metastore --start
 
 # Install MapR POSIX client in order to use MapR via NFS
