@@ -29,7 +29,7 @@
         {
           "file": "mapr_license.txt",
           "target": "/root"
-        },
+        }
       ]
     },
     "environment": {
