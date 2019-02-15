@@ -3,6 +3,9 @@
 # Login
 echo "mapr" | maprlogin password -user mapr
 
+# Add a mapr license needed for snapshots
+maprcli license add -license assets/mapr_license.txt -is_file true
+
 # Remove Hive metastore in order to avoid some wierd errors
 /opt/mapr/hive/hive-2.3/bin/hive --service metastore --stop
 rm -rf /opt/mapr/hive/hive-2.3/bin/metastore_db/
@@ -43,9 +46,6 @@ git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
 cp mapr-sparkml-streaming-wildfires/ml_input_stream.sh mapr-sparkml-streaming-wildfires/ml_output_stream.sh /root
 websocketd --port=3433 --dir=/root --devconsole &
 disown
-
-# add a mapr license needed for snapshots
-maprcli license add -license assets/mapr_license.txt -is_file true
 
 # Import notebook into Zeppelin
 wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
