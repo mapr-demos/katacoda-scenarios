@@ -4,6 +4,7 @@
 echo "mapr" | maprlogin password -user mapr
 
 # Add a mapr license needed for snapshots
+wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/mapr_license.txt
 maprcli license add -license /root/mapr_license.txt -is_file true
 
 # Remove Hive metastore in order to avoid some wierd errors
@@ -48,6 +49,8 @@ websocketd --port=3433 --dir=/root --devconsole &
 disown
 
 # Import notebook into Zeppelin
+wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
+cp assets/Forest*.json /root
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
 
 # Build the jar file for the spark app used in the notebook
