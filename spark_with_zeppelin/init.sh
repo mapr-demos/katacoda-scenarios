@@ -45,8 +45,7 @@ websocketd --port=3433 --dir=/root --devconsole &
 disown
 
 # add a mapr license needed for snapshots
-wget -P /root -O license.txt https://gist.githubusercontent.com/iandow/03198d1d42c117c564eca5e00033bd36/raw/cd8bac1f3ea56a1862f920aa4d48511a073fcb4e/license.txt
-maprcli license add -license /root/license.txt -is_file true
+maprcli license add -license assets/mapr_license.txt -is_file true
 
 # Import notebook into Zeppelin
 wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
