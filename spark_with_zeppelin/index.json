@@ -20,26 +20,6 @@
           "text": "finish.md"
         }
     },
-    "assets": {
-      "client": [
-        {
-          "file": "Forest Fire Prediction.json",
-          "target": "/root"
-        },
-        {
-          "file": "mapr_license.txt",
-          "target": "/root"
-        }],
-        "host01": [
-        {
-          "file": "Forest Fire Prediction.json",
-          "target": "/root"
-        },
-        {
-          "file": "mapr_license.txt",
-          "target": "/root"
-        }]
-    },
     "environment": {
         "hideintro": false,
         "hidefinish": false,
