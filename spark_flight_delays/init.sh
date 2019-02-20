@@ -37,7 +37,6 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
 done
 
 # Import notebook into Zeppelin
-wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
-cp assets/Forest*.json /root
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
+cp assets/Flight*.json /root
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Flight Delay Prediction.json"
 

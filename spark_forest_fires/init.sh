@@ -36,8 +36,26 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
     sleep 1
 done
 
+####################################################
+# Install stuff needed for the Forest Fire notebook
+####################################################
+sudo yum install python-pip -y
+sudo pip install dbfpy requests pandas bs4 websocket-client
+wget https://github.com/joewalnes/websocketd/releases/download/v0.3.0/websocketd.0.3.0.i386.rpm
+sudo rpm -ivh websocketd.0.3.0.i386.rpm
+git clone https://github.com/mapr-demos/mapr-sparkml-streaming-wildfires
+cp mapr-sparkml-streaming-wildfires/ml_input_stream.sh mapr-sparkml-streaming-wildfires/ml_output_stream.sh /root
+websocketd --port=3433 --dir=/root --devconsole &
+disown
+
 # Import notebook into Zeppelin
 wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/Forest%20Fire%20Prediction.json
 cp assets/Forest*.json /root
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Forest Fire Prediction.json"
+
+# Build the jar file for the spark app used in the notebook
+cd /root/mapr-sparkml-streaming-wildfires
+yum install maven -y
+mvn package
+cp target/mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar /root
 

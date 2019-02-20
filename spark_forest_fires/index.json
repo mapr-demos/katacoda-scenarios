@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Intro to MapR",
-    "title": "Spark with Zeppelin",
-    "description": "Illustrates how to use Spark in Zeppelin.",
+    "title": "Predicting Forest Fires with Spark ML",
+    "description": "Illustrates how to use Spark ML and Apache Zeppelin.",
     "difficulty": "beginner",
     "time": "15 minutes",
     "details": {
@@ -26,7 +26,8 @@
         "showdashboard": true,
         "dashboards": [
             {"name": "Zeppelin", "port": 7000},
-            {"name": "MapR Control System", "port": 8443}
+            {"name": "MapR Control System", "port": 8443},
+            {"name": "Fire Alarms", "port": 3433}
         ],
         "uilayout": "terminal-iframe",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"

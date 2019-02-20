@@ -1,0 +1,1 @@
+You've completed your first MapR scenario! Please proceed to the next scenario. For more information about what the MapR data platform is and how you can use it to solve enterprise business needs, see (MapR Documentation)[https://mapr.com/docs/61/MapROverview/c_overview_intro.html].
