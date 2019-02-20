@@ -4,5 +4,5 @@ This is tutorial demonstrates how to use Spark in Apache Zeppelin for a machine 
 
 1. `ps -e -f | grep zeppelin`{{execute}}
 2. Open Zeppelin in the toolbar tab
-3. Open and run the Flight Delays Prediction notebook
+3. Open and run the Flight Delays Prediction notebook. :airplane:
 
