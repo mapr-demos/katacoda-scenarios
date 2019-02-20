@@ -1,8 +1,8 @@
 {
     "pathwayTitle": "Intro to MapR",
     "title": "Predicting Flight Delays with Spark ML",
-    "description": "Illustrates how to use Spark ML and Apache Zeppelin on MapR.",
-    "difficulty": "beginner",
+    "description": "Illustrates how to use Spark ML and Apache Zeppelin on MapR. ✈️",
+    "difficulty": "advanced",
     "time": "20 minutes",
     "details": {
         "steps": [
