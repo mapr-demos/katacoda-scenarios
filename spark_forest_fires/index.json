@@ -1,7 +1,7 @@
 {
     "pathwayTitle": "Intro to MapR",
     "title": "Predicting Forest Fires with Spark ML",
-    "description": "Illustrates how to use Spark ML and Apache Zeppelin.",
+    "description": "Illustrates how to use Spark ML and Apache Zeppelin on MapR.",
     "difficulty": "beginner",
     "time": "15 minutes",
     "details": {
