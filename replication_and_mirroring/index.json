@@ -24,8 +24,15 @@
         "hideintro": false,
         "hidefinish": false,
         "showdashboard": true,
-        "dashboards": [
-            {"name": "MapR Control System", "port": 8443}
+        "terminals": [
+            {"name": "Terminal 1", "target": "host01"},
+            {"name": "Terminal 2", "target": "host02"},
+            {"name": "Stats", "command": "top", "target": "host01"}
+        ]
+        "dashboards": [{"name": "Port 80", "port": 80},
+            {"name": "URL", "href": "https://www.google.co.uk"},
+            {"name": "MapR Control System", "port": 8443},            
+            {"name": "Placeholder", "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"}
         ],
         "uilayout": "terminal-iframe",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
