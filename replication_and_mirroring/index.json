@@ -27,7 +27,7 @@
         "terminals": [
             {"name": "Terminal 1", "target": "host01"},
             {"name": "Terminal 2", "target": "host02"},
-            {"name": "Stats", "command": "top", "target": "host01"}
+            {"name": "Stats", "command": "top", "target": "host02"}
         ],
         "dashboards": [
             {"name": "MapR Control System", "port": 8443},            
