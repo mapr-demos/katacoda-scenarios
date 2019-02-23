@@ -20,3 +20,13 @@ systemctl restart mapr-posix-client-container
 postfix stop
 rm -f /var/spool/mail/root
 
+
+service mapr-warden stop; service mapr-zookeeper stop
+rm -f /opt/mapr/conf/ssl_truststore /opt/mapr/conf/ssl_keystore
+/opt/mapr/server/configure.sh -S -genkeys -C localhost.localdomain -Z localhost.localdomain -N demo2.mapr.com
+/opt/mapr/server/configure.sh -S -genkeys -C localhost.localdomain -Z localhost.localdomain -N demo2.mapr.com
+echo "demo2.mapr.com secure=false localhost.localdomain:7222" > /opt/mapr/conf/mapr-clusters.conf
+service mapr-zookeeper start; service mapr-warden start
+sleep 120
+
+
