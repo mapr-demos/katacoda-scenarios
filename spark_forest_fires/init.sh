@@ -61,10 +61,10 @@ maprcli stream topic create -path /user/mapr/ml_output -topic kmeans001
 
 # Copy the pre-built kmeans model:
 mkdir /mapr/demo.mapr.com/user/mapr/data
-tar -C /mapr/demo.mapr.com/user/mapr/data -xvf saved_model.tgz
+tar -C /mapr/demo.mapr.com/user/mapr/data -xvf mapr-sparkml-streaming-wildfires/saved_model.tgz
 mv /mapr/demo.mapr.com/user/mapr/data/save_fire_model/ /mapr/demo.mapr.com/user/mapr/data/save_fire_model-cascadia
 
 # Copy the fat jar for applying the kmeans model on streaming lat/long coordinates. The fat jar has been split to fit within github's 100MB file size limit. Join the pieces with cat:
-cat mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar-* > mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar
+cat mapr-sparkml-streaming-wildfires/target/mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar-* > mapr-sparkml-streaming-fires-1.0-jar-with-dependencies.jar
 
 
