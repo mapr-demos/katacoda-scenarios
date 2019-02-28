@@ -24,9 +24,6 @@
         "hideintro": false,
         "hidefinish": false,
         "showdashboard": true,
-        "terminals": [
-            {"name": "KMeans Stream Output", "command": "/opt/mapr/kafka/kafka-1.1.1/bin/kafka-console-coh --topic /user/mapr/ml_output:kmeans001 --bootstrap-server not.applicable:0000 --from-beginning", "target": "host02"}
-        ],
         "dashboards": [
             {"name": "Zeppelin", "port": 7000},
             {"name": "MapR Control System", "port": 8443},
