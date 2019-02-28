@@ -30,7 +30,7 @@
         "dashboards": [
             {"name": "Zeppelin", "port": 7000},
             {"name": "MapR Control System", "port": 8443},
-            {"name": "KMeans Stream Input", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_input_stream.sh"}
+            {"name": "KMeans Stream Input", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_input_stream.sh"},
             {"name": "KMeans Stream Output", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_output_stream.sh"}
         ],
         "uilayout": "terminal-iframe",
