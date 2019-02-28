@@ -19,5 +19,5 @@ A pre-built kmeans model has been included so you don't have to run the entire Z
 Instead of using the KMeans input/output window, you can also monitor the streams manually, like this:
 
 4. Input lat/long coordinates to an event stream: `/opt/mapr/kafka/kafka-1.1.1/bin/kafka-console-producer.sh --topic /user/mapr/ml_input:requester001 --broker-list this.will.be.ignored:9092`{{execute}}
-5. Watch the Spark ML kmeans output on this stream: `/opt/mapr/kafka/kafka-1.1.1/bin/kafka-console-consumer.sh --topic /user/mapr/ml_output:kmeans0011 --bootstrap-server not.applicable:0000 --from-beginning`{{execute}}
+5. Watch the Spark ML kmeans output on this stream: `/opt/mapr/kafka/kafka-1.1.1/bin/kafka-console-consumer.sh --topic /user/mapr/ml_output:kmeans001 --bootstrap-server not.applicable:0000 --from-beginning`{{execute}}
 
