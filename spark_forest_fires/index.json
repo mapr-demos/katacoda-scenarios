@@ -24,10 +24,14 @@
         "hideintro": false,
         "hidefinish": false,
         "showdashboard": true,
+        "terminals": [
+            {"name": "KMeans Stream Output", "command": "/opt/mapr/kafka/kafka-1.1.1/bin/kafka-console-coh --topic /user/mapr/ml_output:kmeans001 --bootstrap-server not.applicable:0000 --from-beginning", "target": "host02"}
+        ],
         "dashboards": [
             {"name": "Zeppelin", "port": 7000},
             {"name": "MapR Control System", "port": 8443},
-            {"name": "Fire Alarms", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_input_stream.sh"}
+            {"name": "KMeans Stream Input", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_input_stream.sh"}
+            {"name": "KMeans Stream Output", "href": "https://[[HOST_SUBDOMAIN]]-3433-[[KATACODA_HOST]].environments.katacoda.com/ml_output_stream.sh"}
         ],
         "uilayout": "terminal-iframe",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
