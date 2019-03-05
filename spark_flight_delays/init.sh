@@ -37,7 +37,8 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
 done
 
 # Import notebook into Zeppelin
-wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_flight_delays/assets/Flight%20Delay%20Prediction.json
-cp assets/Flight*.json /root
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/Flight Delay Prediction.json"
+git clone https://github.com/mapr-demos/flightdelayhol
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelayPrediction.json"
+mkdir /mapr/demo.mapr.com/user/mapr/data
+mv /root/flightdelayhol/data/flightdata2018.json /mapr/demo.mapr.com/user/mapr/data/.
 
