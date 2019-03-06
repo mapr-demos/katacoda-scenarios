@@ -41,4 +41,15 @@ git clone https://github.com/mapr-demos/flightdelayhol
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelayPrediction.json"
 mkdir /mapr/demo.mapr.com/user/mapr/data
 mv /root/flightdelayhol/data/flightdata2018.json /mapr/demo.mapr.com/user/mapr/data/.
+mv /root/flightdelayhol/target/*.jar .
+
+# create streams
+maprcli stream create -path /user/mapr/stream -produceperm p -consumeperm p -topicperm p
+maprcli stream topic create -path /user/mapr/stream -topic flights  
+maprcli table create -path /user/mapr/flighttable -tabletype json -defaultreadperm p -defaultwriteperm p
+
+java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgProducer
+
+
+
 
