@@ -40,7 +40,7 @@ done
 git clone https://github.com/mapr-demos/flightdelayhol
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay1SparkDatasets.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay2SparkMachineLearning.json"
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightStructuredStreaming.json"
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay3StructuredStreaming.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightMaprDB.json"
 mkdir /mapr/demo.mapr.com/user/mapr/data
 mv /root/flightdelayhol/data/*.json /mapr/demo.mapr.com/user/mapr/data/.
