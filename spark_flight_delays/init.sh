@@ -28,6 +28,7 @@ mv /opt/zeppelin-0.8.1-bin-all /opt/zeppelin
 echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
 echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export SPARK_SUBMIT_OPTIONS=\"--packages graphframes:graphframes:0.7.0-spark2.3-s_2.11\"" >> /opt/zeppelin/conf/zeppelin-env.sh
 
 # Start Zeppelin
 /opt/zeppelin/bin/zeppelin-daemon.sh start
@@ -41,10 +42,12 @@ git clone https://github.com/mapr-demos/flightdelayhol
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay1SparkDatasets.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay2SparkMachineLearning.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay3StructuredStreaming.json"
-curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay4SQLMaprDatabase.json"
+curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay4SQLMapRDatabase.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay5GraphFrames.json"
 mkdir /mapr/demo.mapr.com/user/mapr/data
-mv /root/flightdelayhol/data/*.json /mapr/demo.mapr.com/user/mapr/data/.
+
+mv /root/flightdelayhol/data/* /mapr/demo.mapr.com/user/mapr/data/.
+gunzip /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.gz
 mv /root/flightdelayhol/target/*.jar .
 
 # create streams
