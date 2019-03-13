@@ -12,9 +12,7 @@ The possibility to blend machine learning with real-time data flowing through a 
 In this Hands on Lab we will look at the architecture of a data pipeline  that combines streaming data with machine learning and fast storage
 to predict flight delays. You will see the end-to-end process required to build this application using Apache APIs for Kafka, Spark and other technologies:
 
-![scenario](/mapr/scenarios/spark_flight_delaysassets/flightusecase.png)
-
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true" width=33%>
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true">
 
 
 Step 1 Using Apache Spark SQL to explore the flight dataset.
