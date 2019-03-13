@@ -20,6 +20,11 @@ systemctl restart mapr-posix-client-container
 postfix stop
 rm -f /var/spool/mail/root
 
+# Download lab material
+git clone https://github.com/mapr-demos/flightdelayhol
+mv /root/flightdelayhol/target/*.jar .
+mv /root/flightdelayhol/data/* .
+
 # Download Zeppelin
 wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz 
 tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-all.tgz
@@ -37,25 +42,14 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api
     sleep 1
 done
 
-# Import notebook into Zeppelin
-git clone https://github.com/mapr-demos/flightdelayhol
+# Import notebooks into Zeppelin
+
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay1SparkDatasets.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay2SparkMachineLearning.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay3StructuredStreaming.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay4SQLMapRDatabase.json"
 curl -X POST http://localhost:7000/api/notebook/import -d @"/root/flightdelayhol/notebooks/FlightDelay5GraphFrames.json"
-mkdir /mapr/demo.mapr.com/user/mapr/data
 
-mv /root/flightdelayhol/data/* /mapr/demo.mapr.com/user/mapr/data/.
-gunzip /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.gz
-mv /root/flightdelayhol/target/*.jar .
-
-# create streams
-maprcli stream create -path /user/mapr/stream -produceperm p -consumeperm p -topicperm p
-maprcli stream topic create -path /user/mapr/stream -topic flights  
-maprcli table create -path /user/mapr/flighttable -tabletype json -defaultreadperm p -defaultwriteperm p
-
-java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgProducer
 
 
 

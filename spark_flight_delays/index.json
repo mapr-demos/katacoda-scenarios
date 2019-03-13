@@ -11,19 +11,19 @@
         "text": "step1.md"
       },
       {
-        "title": "Step 2 - Scenario Syntax",
+        "title": "Step 2 - Using Spark Machine Learning to build a model to predict flight delays",
         "text": "step2.md"
       },
       {
-        "title": "Step 3 - CLI",
+        "title": "Step 3 - Spark Streaming, Spark SQL, and MapR Database",
         "text": "step3.md"
       },
       {
-        "title": "Step 4 - VS Code Extension",
+        "title": "Step 4 - Optional Analysis of Flight delay data and predictions stored in MapR Database with Apache Spark SQL, Apache Drill.",
         "text": "step4.md"
       },
       {
-        "title": "Step 5 - WebHooks",
+        "title": "Step 5 - Optional Analyzing Flight Delays with Apache Spark GraphFrames and MapR Database",
         "text": "step5.md"
       }
     ],
