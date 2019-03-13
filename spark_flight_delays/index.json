@@ -7,7 +7,7 @@
     "details": {
     "steps": [
       {
-        "title": "Step 1 - Open Zeppelin Spark Datasets notebook",
+        "title": "Step 1 - Using Apache Spark SQL to Explore the flight data",
         "text": "step1.md"
       },
       {
