@@ -21,7 +21,7 @@ Unzip the flights data file on MapR XD:
 `gunzip /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.gz`{{execute}}
 
 Look at the end of the flights data file on MapR XD:
-`tail /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.`{{execute}}
+`tail /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json`{{execute}}
 
 ## Using Apache Spark SQL to explore the flight dataset on MapR XD
 
@@ -30,4 +30,12 @@ These lab exercises use Spark in Apache Zeppelin notebooks.
 2. This should take you to a Zeppelin page with a list of notebooks, if you do not see the list, click refresh.
 3. Open and the FlightDelay1SparkDatasets notebook. ✈️
 4. Follow the Notebook lab instructions. Click on the READY > to run the Spark code paragraphs. 
+
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/LoadData-Frame.png?raw=true"width="50%" height="40%">
+
+## Summary After Running the Zeppelin Notebook
+You have now learned how to load data into Spark Datasets and DataFrames and how to explore tabular data with Spark SQL. These code examples can be reused as the foundation to solve many types of business problems. 
+Click continue before running the next notebook
+
+
 

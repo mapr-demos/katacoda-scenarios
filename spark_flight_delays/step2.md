@@ -1,16 +1,17 @@
-Within each step, a series of Markdown extensions have been created that can provide various details for the users' experience.
+## Using Apache Spark’s ML pipelines with a Random Forest Classifier to predict flight delays
 
-For example, commands such as `echo "Run in Terminal"`{{execute}}
- can be executed by clicking the command.
 
-This is done by adding `execute` to the markdown code block, for example:
-<pre>`echo "Run in Terminal"`{{execute}}</pre>
+1. To run this exercise, click on the black Zeppelin tab on the right, scroll to the top, click on the blue Zeppelin icon. 
+2. This should take you to a Zeppelin page with a list of notebooks.
+3. Open and the FlightDelay2SparkMachineLearning notebook. ✈️
+4. Follow the Notebook lab instructions. Click on the READY > to run the Spark code paragraphs. 
 
-More can be found at the scenario [on Markdown extensions](https://katacoda.com/scenario-examples/markdown-extensions).
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/TypicalMLphases.png?raw=true"width="50%" height="40%">
 
-# create streams
-maprcli stream create -path /user/mapr/stream -produceperm p -consumeperm p -topicperm p
-maprcli stream topic create -path /user/mapr/stream -topic flights  
-maprcli table create -path /user/mapr/flighttable -tabletype json -defaultreadperm p -defaultwriteperm p
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/LoadDataTransforms.png?raw=true"width="50%" height="40%">
 
-java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgProducer
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/Pipeline.png?raw=true"width="50%" height="40%">
+
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/pipelinefittest.png?raw=true"width="50%" height="40%">
+<br/>
+
