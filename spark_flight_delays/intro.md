@@ -3,7 +3,7 @@ The possibility to blend machine learning with real-time data flowing through a 
 In this Hands on Lab we will look at the architecture of a data pipeline  that combines streaming data with machine learning and fast storage
 to predict flight delays. 
 
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true"  width="400" height="400">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true"   width="50%" height="50%">
 You will see the end-to-end process required to build this application and you will become familiar with the MapR Data Platform by interacting with Apache Spark SQL, Spark Streaming, Spark Machine learning, MapR Event Store for Kafka, and MapR Database on a single-node MapR cluster. This Lab consists of the following steps:
 
 1. Using Apache Spark SQL to explore the flight dataset.
@@ -22,5 +22,5 @@ The MapR Data Platform delivers dataware for AI and analytics. The MapR Data Pla
 
 Dataware effectively handles the diversity of data types, data access, and ecosystem tools needed to manage data as an enterprise resource regardless of the underlying infrastructure or location. With the MapR Data Platform, users can store, manage, process, and analyze all data - including files, tables, and streams from operational, historical, and real-time data sources - with mission-critical reliability to meet production SLAs.  MapR solves the challenges of complex data environments by managing data and its ecosystem across multiple clouds and containerized infrastructures.
 
-<img src="https://github.com/mapr-demos/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart.png?raw=true"  width="400" height="400">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/blob/master/mapr-intro/assets/Data-Platform-Chart.png?raw=true" width=33% height=33% >
 
