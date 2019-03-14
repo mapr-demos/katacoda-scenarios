@@ -19,9 +19,7 @@ We will fit or train the ML pipeline on training Data, this returns a pipeline m
 4. Follow the Notebook lab instructions. Click on the READY > arrows to run the Spark code paragraphs. 
 
 ## Summary
-There are plenty of great tools to build classification models. Apache Spark provides an excellent framework for building solutions to business problems that can extract value from massive, distributed datasets.
-
-Machine learning algorithms cannot answer all questions perfectly. But they do provide evidence for humans to consider when interpreting results, assuming the right question is asked in the first place. In this example, we could get better flight delay predictions with more timely information, such as weather,  holidays, incoming flight delays, carrier, airplane and airport problems.
+Apache Spark provides an excellent framework for building solutions to business problems that can extract value from massive, distributed datasets. Machine learning algorithms cannot answer all questions perfectly. But they do provide evidence for humans to consider when interpreting results, assuming the right question is asked in the first place. In this example, we could get better flight delay predictions with more timely information, such as weather,  holidays, incoming flight delays, carrier, airplane and airport problems.
 
 Click continue before running the next notebook.
 

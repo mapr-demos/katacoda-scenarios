@@ -2,7 +2,7 @@ The possibility to blend machine learning with real-time data flowing through a 
 
 In this Hands on Lab we will look at the architecture of a data pipeline  that combines streaming data with machine learning and fast storage
 to predict flight delays. You will see the end-to-end process required to build this application and you will become familiar with the MapR Data Platform by interacting with Apache Spark SQL, Spark Streaming, Spark Machine learning, MapR Event Store for Kafka, and MapR Database on a single-node MapR cluster.
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true"width="50%" height="40%">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true width=50% height=40% ">
 <br/>
 
 This Lab consists of the following steps:
@@ -11,8 +11,7 @@ This Lab consists of the following steps:
 
 2. Using Spark Machine Learning to build a model to predict flight delays.
 
-3. MapR Event Store for Kafka, Spark Streaming, Spark SQL, and MapR Database: Using the ML model to enrich streaming flight events with flight delays predictions, to store in MapR Database, 
-and do real time analysis with Spark SQL.
+3. Use Spark Structured Streaming with the Kafka API to read streaming flight events, use a Spark ML model to enrich streaming flight events with flight delays predictions, store the results in MapR Database, and do real time analysis with Spark SQL.
 
 4. Optional Analysis of Flight delay data and predictions stored in MapR Database with Apache Spark SQL, Apache Drill.
 
