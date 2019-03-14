@@ -9,7 +9,7 @@ The [MapR Event Store for Apache Kafka](https://mapr.com/products/mapr-streams/)
 is a distributed publish-subscribe event streaming system that enables producers and consumers to exchange events in real time in a parallel and fault-tolerant manner via the Apache Kafka API.
 Topics are a logical stream of events. Topics organize events into categories and decouple producers from consumers. Topics are partitioned for throughput and scalability. MapR Event Store can scale to very high throughput levels, easily delivering millions of messages per second using very modest hardware.
 
-<img src="https://mapr.com/blog/real-time-analysis-popular-uber-locations-spark-structured-streaming-machine-learning-kafka-and-mapr-db/assets/image16.png width=400 height=400">
+<img src="https://mapr.com/blog/real-time-analysis-popular-uber-locations-spark-structured-streaming-machine-learning-kafka-and-mapr-db/assets/image16.png" width=400 height=400 >
 ## Creating Streams
 
 Before you can publish messages to a *topic*, you need to create a *stream* to hold the topic. *Streams* are unique to the MapR Event Store for Apache Kafka. They help administrators apply security policies and other configurations to groups of related topics.
@@ -39,6 +39,7 @@ The [MapR Database](https://mapr.com/products/mapr-db/) is a scalable, high perf
 `maprcli table create -path /user/mapr/flighttable -tabletype json -defaultreadperm p -defaultwriteperm p`{{execute}}
 
 ## Using Apache Spark Structured Streaming Notebook 
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/StreamDBApplication.png?raw=true width=400 height=400">
 
 1. To run this exercise, click on the black Zeppelin tab on the right, scroll to the top, click on the blue Zeppelin icon. 
 2. This should take you to a Zeppelin page with a list of notebooks.
@@ -57,10 +58,10 @@ Read the first two rows in the table. `find /user/mapr/flighttable --limit 5`{{e
 
 To learn more about the various commands, run help' or help <command> , for example `help insert`{{execute}}.
 
-Retrieve one document using its id. `find /user/mapr/flighttable --id cJWbbvGmyhFiBpG_5hf5LA --f _id,name,city`{{execute}}
+Query document with Condition. `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
-
-Query document with Condition. `find /apps/business --where '{ "$like" : {"name":"Hofbräu%"} }' --f _id,name,city`{{execute}}
+Query document with Condition find Atlanta flights predicted late.
+`find /apps/flights --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
@@ -72,7 +73,7 @@ Open the Apache Drill shell:
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
 Connect to the Drill service: 
-<pre><code class="execute">select _id, name, city from dfs.`/apps/business` where name like '%Hofbräu%';</code></pre>
+<pre><code class="execute">select id, src, dst, depdealy, prediction from dfs.`/user/mapr/flighttable` where id like '%ATL%';</code></pre>
 
 Exit the shell: `!quit`{{execute}}
 

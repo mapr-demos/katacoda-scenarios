@@ -1,5 +1,7 @@
-As changes are being made to the content, when they are pushed into the master branch of a Git repository, the content on Katacoda can automatically be updated via a webhook.
+## Using Apache Spark GraphFrames with MapR Database
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/StreamDBApplication.png?raw=true width=400 height=400">
 
-To configure the Webhook, follow the guide at [katacoda.com/docs/configure-git](https://katacoda.com/docs/configure-git).
-
-Once the webhook is installed, everytime you make a push to update to your content, Katacoda will be automatically updated.
+1. To run this exercise, click on the black Zeppelin tab on the right, scroll to the top, click on the blue Zeppelin icon. 
+2. This should take you to a Zeppelin page with a list of notebooks.
+3. Open and the FlightDelay5SQLGraphFrames notebook. ✈️
+4. Follow the Notebook lab instructions. Click on the READY > to run the Spark code paragraphs. 
