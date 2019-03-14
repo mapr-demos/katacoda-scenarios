@@ -1,20 +1,12 @@
 
-## Overview of Hands-On Lab
-In this Hands on Lab we will look at the architecture of a data pipeline  that combines streaming data with machine learning and fast storage to predict flight delays. 
-
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true width=400 height=400 ">
-
 There are typically two phases in machine learning:
-*Data Discovery: The first phase involves analysis on historical data to build and train the machine learning model.
-*Analytics Using the Model: The second phase uses the model in production on new data.
+* Data Discovery: The first phase involves analysis on historical data to build and train the machine learning model.
+* Analytics Using the Model: The second phase uses the model in production on new data.
 In production, models need to be continuously monitored and updated with new models when needed.
 <img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/TypicalMLphases.png?raw=true width=400 height=400">
-This Hands On lab consists of the following steps:
-1. Using Spark SQL for data discovery of the flights file on the MapR distributed file system. 
-2. Using Spark Machine learning to build and store a Flight Delay predicton model on the MapR distributed file system.
-3. Using Spark Streaming to read from the MapR Event Store for Kafka, use the stored predicton model to enrich events and store the results in MapR Database.
-4. Optional Labs for Apache Drill SQL and Spark GraphFrames
-For each step follow the instructions on the left frame before starting the Notebook. After finishing the Notebook, click on continue, and follow the next instructions before running another notebook. 
+In Step 1 of this HOL we will use Spark SQL for data discovery of the flights dataset stored on the MapR distributed file system. 
+
+For each step of the HOL follow the instructions on the left frame before running the Zeppelin notebook code. After finishing the notebook, click on continue on the left frame, and follow the next instructions before running another notebook. 
 
 ***Wait about 5 minutes for Zeppelin to download and install. note this is temporary***
 
