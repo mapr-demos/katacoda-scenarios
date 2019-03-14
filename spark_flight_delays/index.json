@@ -19,11 +19,11 @@
         "text": "step3.md"
       },
       {
-        "title": "Step 4 - Optional Analysis of Flight delay data and predictions stored in MapR Database with Apache Spark SQL, Apache Drill.",
+        "title": "Step 4 - Optional Using Apache Drill and Spark SQL with MapR Database.",
         "text": "step4.md"
       },
       {
-        "title": "Step 5 - Optional Analyzing Flight Delays with Apache Spark GraphFrames and MapR Database",
+        "title": "Step 5 - Optional Using Apache Spark GraphFrames with MapR Database",
         "text": "step5.md"
       }
     ],

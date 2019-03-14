@@ -24,17 +24,16 @@ View the stream and topic `maprcli stream topic list -path /user/mapr/stream`{{e
 
 Kafka is the defacto standard API for streams and it too is supported by MapR. For simple tutorial purposes, we'll use a prebuilt Java client to read from the flights JSON file and publish as messages to the MapR Event store /user/mapr/stream:flights Topic. 
 
-`java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgProducer`{{execute}}
+<pre><code class="execute">java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgProducer</code></pre>
 
-Now, consume those messages from the stream.
+Now, get info on the topic
 
-`java -cp ./mapr-spark-flightdelay-1.0.jar:`mapr classpath` streams.MsgConsumer`{{execute}}
+`maprcli stream topic info -path /apps/stream -topic flights`{{execute}}
 
-You can use ctl c in the terminal window to stop consuming
 
 ## Create a MapR Database table for Storing Enriched Events
 
-The [MapR Database](https://mapr.com/products/mapr-db/) is a scalable, high performance, NoSQL database designed for data-intensive applications. 
+The [MapR Database](https://mapr.com/products/mapr-db/) is a scalable, high performance, NoSQL database designed for data-intensive applications. Use the MapR cli to create the table which Spark Structured Streaming will write to:
 
 `maprcli table create -path /user/mapr/flighttable -tabletype json -defaultreadperm p -defaultwriteperm p`{{execute}}
 
@@ -49,6 +48,8 @@ The [MapR Database](https://mapr.com/products/mapr-db/) is a scalable, high perf
 ## Using the MapR Database Shell
 
 The ***mapr dbshell*** enables you to create, manipulate, and query JSON tables in MapR-DB.
+
+After you have started the spark streaming write, you can use the mapr dbshell to query the Data. 
 
 Open the MapR Database Shell utility. `mapr dbshell`{{execute}} 
 

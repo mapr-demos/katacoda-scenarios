@@ -1,6 +1,6 @@
 
-## Using Apache Drill and Spark SQL and MapR Database Notebook 
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/StreamDBApplication.png?raw=true width=400 height=400">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/flightusecase.png?raw=true width=400 height=400">
+<br/>
 
 1. To run this exercise, click on the black Zeppelin tab on the right, scroll to the top, click on the blue Zeppelin icon. 
 2. This should take you to a Zeppelin page with a list of notebooks.
