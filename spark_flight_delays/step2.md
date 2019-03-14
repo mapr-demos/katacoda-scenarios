@@ -2,7 +2,7 @@ In Step 2 of this HOL we will use Spark Machine Learning on historical flight da
 
 <img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/TypicalMLphases.png?raw=true width=400 height=400">
 
-Spark ML provides a uniform set of high-level APIs, built on top of DataFrames. Having ML APIs built on top of DataFrames provides the scalability of partitioned data processing with the ease of SQL for data manipulation. We will use transformers to get a DataFrame with a features vector column. We will use a an estimator to train a model, which can transform input data to get predictions.
+Spark ML provides a uniform set of high-level APIs, built on top of DataFrames. Having ML APIs built on top of DataFrames provides the scalability of partitioned data processing with the ease of SQL for data manipulation. We will use transformers to get a DataFrame with a features vector column. We will use an estimator to train a model, which can transform input data to get predictions.
 <img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/LoadDataTransforms.png?raw=true width=400 height=400">
 
 We will use an ML Pipeline to pass the data through transformers in order to extract the features and an estimator to produce the model.
@@ -10,9 +10,9 @@ We will use an ML Pipeline to pass the data through transformers in order to ext
 
 We will fit or train the ML pipeline on training Data, this returns a pipeline model which we will evaluate with test data. Finally we will store the pipeline model on the MapR XD distributed file store for use in the next step.
 
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/pipelinefittest.png?raw=true"width="50%" height="40%">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/pipelinefittest.png?raw=true width=400 height=400">
 
-
+## Using Apache Spark Machine Learning Notebook 
 1. To run this exercise, click on the black Zeppelin tab on the right, scroll to the top, click on the blue Zeppelin icon. 
 2. This should take you to a Zeppelin page with a list of notebooks.
 3. Open and the FlightDelay2SparkMachineLearning notebook. ✈️
