@@ -30,6 +30,8 @@ Now, get info on the topic
 
 `maprcli stream topic info -path /user/mapr/stream -topic flights`{{execute}}
 
+Now, consume 10 messages from the topic
+/opt/mapr/kafka/kafka-*/bin/kafka-console-consumer.sh --topic /user/mapr/stream:flights --from-beginning --bootstrap-server this.will.be.ignored:9092 --max-messages 10{{execute}}
 
 ## Create a MapR Database table for Storing Enriched Events
 
@@ -61,22 +63,10 @@ To learn more about the various commands, run help' or help <command> , for exam
 
 Query document with Condition. `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
-Query document with Condition find Atlanta flights predicted late.
-`find /user/mapr/flighttable --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
+Query document with Condition find Atlanta flights that were late.
+`find /user/mapr/flighttable --where '{"$and":[{"$eq":{"label":1.0}},{ "$like" : {"id":"ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
-
-### Run SQL with Apache Drill
-
-Apache Drill is a distributed SQL engine integrated into the MapR Data Platform. Try it!
-
-Open the Apache Drill shell:
-`sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
-
-Connect to the Drill service: 
-<pre><code class="execute">select id, src, dst, depdelay, prediction from dfs.`/user/mapr/flighttable` where id like '%ATL%';</code></pre>
-
-Exit the shell: `!quit`{{execute}}
 
 ## Summary
 In this Lab, you learned how to use the following:
@@ -84,7 +74,8 @@ A Spark machine learning model in a Spark Structured Streaming application
 Spark Structured Streaming with MapR Event Store to ingest messages using the Kafka API
 Spark Structured Streaming to persist to MapR Database for continuously rapidly available SQL analysis
 
-All of the components of the use case architecture we just discussed can run on the same cluster with the MapR Data Platform. 
-This is the official end of this workshop. If you have time remaining you can continue to complete the remaining optional Steps
+Click continue before running another notebook.
+
+
 
 

@@ -27,6 +27,37 @@ Unzip the flights data file on MapR XD:
 Look at the end of the flights data file on MapR XD:
 `tail /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json`{{execute}}
 
+## Using Apache Drill to explore the flight dataset on MapR XD
+
+Apache Drill is an open source, low-latency query engine for big data that delivers interactive SQL analytics at petabyte scale. Drill provides a massively parallel processing execution engine, built to perform distributed query processing across the various nodes in a cluster.
+
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/querying-data-with-apache-drill.png?raw=true width=500 height=500 ">
+
+With Drill, you can use SQL to interactively query and join data from files in JSON, Parquet, or CSV format, Hive, and NoSQL stores, including MapR Database, HBase, and Mongo, without defining schemas.
+
+Try Apache Drill with the Drill shell:
+`sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
+
+Connect to the Drill service: 
+<pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/data/flightdata2018.json` where id like 'ATL%' order by depdelay desc limit 20;</code></pre>
+
+Exit the shell: `!quit`{{execute}}
+
+Try Apache Drill with the Drill web UI:
+
+1. Click on the Drill tab on the right.
+2. This should take you to a Drill web UI.
+3. Click on the Query tab in the Drill web UI.  
+4  Login using userid mapr password mapr.
+5. Copy paste, or type one of the queries below next to the 1 and click submit.
+
+Example queries:
+<pre><code>select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/data/flightdata2018.json` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
+
+<pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/data/flightdata2018.json` where depdelay > 40 and src='ATL' group by src;</code></pre>
+
+Let's move on to Spark, we will look at Drill more later
+
 ## Using Apache Spark SQL to explore the flight dataset on MapR XD
 
 <img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/LoadData-Frame.png?raw=true width=500 height=500 ">
