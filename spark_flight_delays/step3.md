@@ -32,7 +32,8 @@ Now, get info on the topic
 `maprcli stream topic info -path /user/mapr/stream -topic flights`{{execute}}
 
 Now, consume 10 messages from the topic
-/opt/mapr/kafka/kafka-*/bin/kafka-console-consumer.sh --topic /user/mapr/stream:flights --from-beginning --bootstrap-server this.will.be.ignored:9092 --max-messages 10{{execute}}
+
+`/opt/mapr/kafka/kafka-*/bin/kafka-console-consumer.sh --topic /user/mapr/stream:flights --from-beginning --bootstrap-server this.will.be.ignored:9092 --max-messages 10`{{execute}}
 
 ## Create a MapR Database table for Storing Enriched Events
 

@@ -11,10 +11,11 @@ Apache Drill is an open source, low-latency query engine for big data that deliv
 
 With Drill, you can use SQL to interactively query and join data from files in JSON, Parquet, or CSV format, Hive, and NoSQL stores, including MapR Database, HBase, and Mongo, without defining schemas.
 
-Try Apache Drill with the Drill shell:
+Try Apache Drill with the Drill shell and Execute queries:
+
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
-Connect to the Drill service: 
+
 <pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/flighttable` where id like 'ATL%' order by depdelay desc limit 20;</code></pre>
 
 Exit the shell: `!quit`{{execute}}
@@ -36,6 +37,10 @@ Example queries:
 <pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 and src='ATL' group by src;</code></pre>
 
 Explore the Drill Web UI 
+
+1. Click on the top Profiles tab
+2. Click on one of the highlighted queries
+3. Click on Physical Plan Visual Plan Edit Query to explore the query plan
 
 ### Apache Spark SQL with MapR Database
 there is also a Spark SQL notebook but this is similar to the queries you already ran in the Streaming notebook. 

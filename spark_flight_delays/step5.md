@@ -19,6 +19,6 @@ This notebook will help you get started using Apache Spark GraphFrames Graph Alg
 GraphFrames provides a scalable and easy way to query and process large graph datasets, which can be used to solve many types of analysis problems. In this chapter, we gave an overview of the GraphFrames graph processing APIs. We encourage you to try out GraphFrames in more depth on some of your own projects.
 
 All of the components of the use case we just discussed can run on the same cluster with the MapR Data Platform
-<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/maprdp.png?raw=true width=400 height=400">
+<img src="https://github.com/mapr-demos/katacoda-scenarios/raw/master/spark_flight_delays/assets/maprdp.jpg?raw=true width=400 height=400">
 <br/>
 

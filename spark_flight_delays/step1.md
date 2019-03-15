@@ -35,10 +35,12 @@ Apache Drill is an open source, low-latency query engine for big data that deliv
 
 With Drill, you can use SQL to interactively query and join data from files in JSON, Parquet, or CSV format, Hive, and NoSQL stores, including MapR Database, HBase, and Mongo, without defining schemas.
 
-Try Apache Drill with the Drill shell:
+Try Apache Drill with the Drill shell connect to the Drill service: 
+
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
-Connect to the Drill service: 
+Query for longest departure delays originating from Atlanta: 
+
 <pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/data/flightdata2018.json` where id like 'ATL%' order by depdelay desc limit 20;</code></pre>
 
 Exit the shell: `!quit`{{execute}}
@@ -48,13 +50,13 @@ Try Apache Drill with the Drill web UI:
 1. Click on the Drill tab on the right.
 2. This should take you to a Drill web UI.
 3. Click on the Query tab in the Drill web UI.  
-4  Login using userid mapr password mapr.
+4. Login using userid mapr password mapr.
 5. Copy paste, or type one of the queries below next to the 1 and click submit.
 
 Example queries:
-<pre><code>select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/data/flightdata2018.json` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
+<pre><code>select id, src, dst, depdelay from dfs.`/user/mapr/data/flightdata2018.json`where id like 'ATL%' order by depdelay desc limit 20</code></pre>
 
-<pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/data/flightdata2018.json` where depdelay > 40 and src='ATL' group by src;</code></pre>
+<pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/data/flightdata2018.json` where depdelay > 40 and src='ATL' group by src</code></pre>
 
 Let's move on to Spark, we will look at Drill more later
 
