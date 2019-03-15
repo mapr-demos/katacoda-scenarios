@@ -28,7 +28,7 @@ Kafka is the defacto standard API for streams and it too is supported by MapR. F
 
 Now, get info on the topic
 
-`maprcli stream topic info -path /apps/stream -topic flights`{{execute}}
+`maprcli stream topic info -path /user/mapr/stream -topic flights`{{execute}}
 
 
 ## Create a MapR Database table for Storing Enriched Events
@@ -57,12 +57,12 @@ Set the pretty print option. `jsonoptions --pretty true --withtags false`{{execu
 
 Read the first two rows in the table. `find /user/mapr/flighttable --limit 5`{{execute}}
 
-To learn more about the various commands, run help' or help <command> , for example `help insert`{{execute}}.
+To learn more about the various commands, run help' or help <command> , for example `help find`{{execute}}.
 
 Query document with Condition. `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
 Query document with Condition find Atlanta flights predicted late.
-`find /apps/flights --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
+`find /user/mapr/flights --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
