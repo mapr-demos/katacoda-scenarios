@@ -17,9 +17,9 @@ For each step of the HOL follow the instructions on the left frame before runnin
 
 Make a directory for data on MapR XD: `mkdir /mapr/demo.mapr.com/user/mapr/data`{{execute}}
 
-Copy flight data file from the local Linux filesystem to MapR XD: `cp ~/flightdata2018.json.gz /mapr/demo.mapr.com/user/mapr/data`{{execute}}
+Copy flight data file from the local Linux filesystem to MapR XD: `cp ~/flightdata2018.json.gz /mapr/demo.mapr.com/user/mapr/data/.`{{execute}}
 
-Copy airports data file from the local Linux filesystem to MapR XD: `cp ~/airports.json /mapr/demo.mapr.com/user/mapr/data`{{execute}}
+Copy airports data file from the local Linux filesystem to MapR XD: `cp ~/airports.json /mapr/demo.mapr.com/user/mapr/data/.`{{execute}}
 
 Unzip the flights data file on MapR XD:
 `gunzip /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.gz`{{execute}}

@@ -62,7 +62,7 @@ To learn more about the various commands, run help' or help <command> , for exam
 Query document with Condition. `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
 Query document with Condition find Atlanta flights predicted late.
-`find /user/mapr/flights --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
+`find /user/mapr/flighttable --where '{"$and":[{"$eq":{"prediction":1.0}},{ "$like" : {"id":"%ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
@@ -74,7 +74,7 @@ Open the Apache Drill shell:
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
 Connect to the Drill service: 
-<pre><code class="execute">select id, src, dst, depdealy, prediction from dfs.`/user/mapr/flighttable` where id like '%ATL%';</code></pre>
+<pre><code class="execute">select id, src, dst, depdelay, prediction from dfs.`/user/mapr/flighttable` where id like '%ATL%';</code></pre>
 
 Exit the shell: `!quit`{{execute}}
 
