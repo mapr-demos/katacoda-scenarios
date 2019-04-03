@@ -21,7 +21,7 @@ postfix stop
 rm -f /var/spool/mail/root
 
 # Download Zeppelin
-wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz 
+#wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz 
 tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-all.tgz
 mv /opt/zeppelin-0.8.1-bin-all /opt/zeppelin
 # Configure Zeppelin for YARN, Spark, and webui port 7000
