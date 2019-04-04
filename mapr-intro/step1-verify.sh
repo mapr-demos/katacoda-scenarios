@@ -1,1 +1,1 @@
-ssh root@host01 '[ -e /tmp/maprticket_0 ] && echo "done"'
+ssh root@host01 '[ -e /tmp/maprticket_* ] && echo "done"'
