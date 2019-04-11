@@ -1,0 +1,13 @@
+{
+  "title": "Predicting Flight Delays Using Apache APIS: Kafka, Spark and Drill",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "mapr",
+      "id": "spark_flight_delays",
+      "course_id": "spark_flight_delays",
+      "title": "Predicting Flight Delays Using Apache APIS: Kafka, Spark and Drill",
+      "description": "In this deep dive we will look at the architecture of a data pipeline that combines streaming data with machine learning to predict flight delays. You will see the end-to-end process required to build this application using Apache APIs for Kafka, Spark, Drill and other technologies"
+    }
+  ]
+}
