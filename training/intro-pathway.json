@@ -1,0 +1,13 @@
+{
+  "title": "MapR Introduction Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "mapr",
+      "id": "mapr-intro",
+      "course_id": "mapr-intro",
+      "title": "Introduction to MapR",
+      "description": "Illustrates how to use managing files, tables, and streams in the MapR data platform."
+    }
+  ]
+}
