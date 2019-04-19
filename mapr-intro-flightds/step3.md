@@ -4,7 +4,7 @@ CRUD operations can be performed programmatically using Python, Java, and Node.j
 
 ## Create a table
 
-Import a JSON file into that table. This command may take a minute to complete. `mapr importJSON -idField business_id -src /tmp/yelp_academic_dataset_business.json -dst /apps/business -mapreduce false`{{execute}}
+Import a JSON file into a MapR Database table. This command may take a minute to complete. `mapr importJSON -idField id -src /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json -dst /user/mapr/flighttable -mapreduce false`{{execute}}
 
 ## CRUD Operations on the Shell
 
@@ -14,15 +14,13 @@ Open the MapR Database Shell utility. `mapr dbshell`{{execute}}
 
 Set the pretty print option. `jsonoptions --pretty true --withtags false`{{execute}}
 
-Read the first two rows in the table. `find /apps/business --limit 2`{{execute}}
+Read the first 5 rows in the table. `find /user/mapr/flighttable --limit 5`{{execute}}
 
 To learn more about the various commands, run help' or help <command> , for example `help insert`{{execute}}.
 
-Retrieve one document using its id. `find /apps/business --id cJWbbvGmyhFiBpG_5hf5LA --f _id,name,city`{{execute}}
+Query with condition to find flights originating from Atlanta `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
-Insert a new record. `insert /apps/business --value '{"_id":"hofbraus000222333", "name":"Hofbräuhaus", "city":"München"}'`{{execute}}
-
-Query document with Condition. `find /apps/business --where '{ "$like" : {"name":"Hofbräu%"} }' --f _id,name,city`{{execute}}
+Query with condition to find flights originating from Atlanta that were late. `find /user/mapr/flighttable --where '{"$and":[{"$eq":{"label":1.0}},{ "$like" : {"id":"ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
@@ -33,8 +31,12 @@ Apache Drill is a distributed SQL engine integrated into the MapR Data Platform.
 Open the Apache Drill shell:
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
-Connect to the Drill service: 
-<pre><code class="execute">select _id, name, city from dfs.`/apps/business` where name like '%Hofbräu%';</code></pre>
+Connect to the Drill service, Query to find flights with id starting with ATL (originating from Atlanta)  
+<pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/flighttable` where id like 'ATL%' order by depdelay desc limit 20;</code></pre>
+
+<pre><code>select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
+
+<pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 and src='ATL' group by src;</code></pre>
 
 Exit the shell: `!quit`{{execute}}
 

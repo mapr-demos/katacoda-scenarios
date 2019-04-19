@@ -59,14 +59,13 @@ Open the MapR Database Shell utility. `mapr dbshell`{{execute}}
 
 Set the pretty print option. `jsonoptions --pretty true --withtags false`{{execute}}
 
-Read the first two rows in the table. `find /user/mapr/flighttable --limit 5`{{execute}}
+Read the first 5 rows in the table. `find /user/mapr/flighttable --limit 5`{{execute}}
 
 To learn more about the various commands, run help' or help <command> , for example `help find`{{execute}}.
 
-Query document with Condition. `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
+Query document with condition to find flights originating from Atlanta `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
 
-Query document with Condition find Atlanta flights that were late.
-`find /user/mapr/flighttable --where '{"$and":[{"$eq":{"label":1.0}},{ "$like" : {"id":"ATL%"} }]}' --f id,prediction`{{execute}}
+Query document with condition to find flights originating from Atlanta that were late. `find /user/mapr/flighttable --where '{"$and":[{"$eq":{"label":1.0}},{ "$like" : {"id":"ATL%"} }]}' --f id,prediction`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
