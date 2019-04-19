@@ -23,10 +23,13 @@ Copy airports data file from the local Linux filesystem to MapR XD: `cp ~/airpor
 Unzip the flights data file on MapR XD:
 `gunzip /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json.gz`{{execute}}
 
+List the files you copied: `ls -l /mapr/demo.mapr.com/user/mapr/data`{{execute}} 
+
 Look at the end of the flights data file on MapR XD:
 `tail /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json`{{execute}}
 
-List the files you copied: `ls -l /mapr/demo.mapr.com/user/mapr/data`{{execute}} 
+Look at the end of the airports data file on MapR XD:
+`tail /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
 
 Change permissions of a file: `chmod 600 /mapr/demo.mapr.com/user/mapr/data/flightdata2018.json`{{execute}}
 
@@ -41,6 +44,7 @@ Files have regular attributes: `stat /mapr/demo.mapr.com/user/mapr/data/airports
 File changes can also be seen in real time. Try continuously changing a file, like this: `while true; do date; sleep 1; done > /mapr/demo.mapr.com/tmp/timestamps`{{execute}}
 
 Then tail that file in another terminal to see those changes in real time. `tail -f /mapr/demo.mapr.com/tmp/timestamps`{{execute T2}}
+(Click on the Terminal 2 tab to see this)
 
 Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop the while loop. `echo "Ctrl+C"`{{execute interrupt}}
 
