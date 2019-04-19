@@ -18,9 +18,9 @@ Read the first 5 rows in the table. `find /user/mapr/flighttable --limit 5`{{exe
 
 To learn more about the various commands, run help' or help <command> , for example `help insert`{{execute}}.
 
-Query with condition to find flights originating from Atlanta `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,prediction`{{execute}}
+Query with condition to find flights originating from Atlanta `find /user/mapr/flighttable --where '{ "$eq" : {"src":"ATL"} }' --f id,src,dst,depdelay`{{execute}}
 
-Query with condition to find flights originating from Atlanta that were late. `find /user/mapr/flighttable --where '{"$and":[{"$eq":{"label":1.0}},{ "$like" : {"id":"ATL%"} }]}' --f id,prediction`{{execute}}
+Query with condition to find flights originating from Atlanta that with departure delay greater than 60 minutes. `find /user/mapr/flighttable --where '{"$and":[{"$gt":{"depdelay":60}},{ "$like" : {"id":"ATL%"} }]}' --f id,depdelay`{{execute}}
 
 Exit the shell. `exit`{{execute}}
 
@@ -31,12 +31,14 @@ Apache Drill is a distributed SQL engine integrated into the MapR Data Platform.
 Open the Apache Drill shell:
 `sqlline -u jdbc:drill:zk=localhost:5181 -n mapr -p mapr`{{execute}}
 
-Connect to the Drill service, Query to find flights with id starting with ATL (originating from Atlanta)  
-<pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/flighttable` where id like 'ATL%' order by depdelay desc limit 20;</code></pre>
+Query to find flights with id starting with LAX (originating from Los Angeles)  
+<pre><code class="execute">select id, src, dst, depdelay from dfs.`/user/mapr/flighttable` where id like 'LAX%' order by depdelay desc limit 20;</code></pre>
 
-<pre><code>select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
+Query to answer "Which departure hours have the most delayed flights" count flights with departure delay greater than 40 minutes by departure hour.
+<pre><code class="execute">select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
 
-<pre><code>select src, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 and src='ATL' group by src;</code></pre>
+Query to answer "How many flights with a depature delay >40 minutes were there originating from Los Angeles when " count flights with departure delay greater than 40 minutes for src airport LAX.
+<pre><code class="execute">select src, count(depdelay) as countdelayed from dfs.`/user/mapr/flighttable` where depdelay > 40 and src='LAX' group by src;</code></pre>
 
 Exit the shell: `!quit`{{execute}}
 

@@ -39,6 +39,9 @@ View the new permissions: `ls -l /mapr/demo.mapr.com/user/mapr/data`{{execute}}
 
 Files can be edited. For example, replace "Hofbräu" with "Hofbrau" using an in-place substitution: `sed -i.bak 's/NJ/New Jersey/g' /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
 
+View change in airports data file on MapR XD:
+`cat /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
+
 Files have regular attributes: `stat /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
 
 File changes can also be seen in real time. Try continuously changing a file, like this: `while true; do date; sleep 1; done > /mapr/demo.mapr.com/tmp/timestamps`{{execute}}
