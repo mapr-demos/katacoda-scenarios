@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export MAPR_ANSIBLE_INVENTORY="ansible_inventory/hosts_mapr_slim"
+export MAPR_ANSIBLE_EXTRA_VARS="disks=/dev/vdb disk_storage_pool_size=1 virtual_machine=True hive_db_type=embedded"
+
 cd /opt/
 git clone https://github.com/mapr-emea/mapr-vagrant-packer.git
 cd mapr-vagrant-packer
