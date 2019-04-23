@@ -14,5 +14,21 @@ cd mapr-ansible
 git checkout 977b9a0f90684a693fb94debf01020220fc1f079
 ansible-playbook -i ../mapr-vagrant-packer/$MAPR_ANSIBLE_INVENTORY --extra-vars "$MAPR_ANSIBLE_EXTRA_VARS" site-cluster.yml
 
+rm -Rf /opt/mapr-ansible
+rm -Rf /opt/mapr-vagrant-packer
+
+sleep 2m
+
+export MAPR_TICKETFILE_LOCATION=/opt/mapr/conf/mapruserticket
+
+maprcli volume list -json | jq '.data[].volumename' | xargs -L 1 maprcli volume modify -replication 1 -minreplication 1 -name
+maprcli volume list -json | jq '.data[].volumename' | xargs -L 1 maprcli volume modify -nsreplication 1 -nsminreplication 1 -name
+
+maprcli alarm clearall
+
+systemctl stop mapr-posix-client-basic | true
+systemctl stop mapr-warden
+systemctl stop mapr-zookeeper
+
 wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
-echo "v1" > /tmp/maprimage
+echo "v2" > /tmp/maprimage
