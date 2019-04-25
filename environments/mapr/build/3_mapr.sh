@@ -17,7 +17,11 @@ ansible-playbook -i ../mapr-vagrant-packer/$MAPR_ANSIBLE_INVENTORY --extra-vars 
 rm -Rf /opt/mapr-ansible
 rm -Rf /opt/mapr-vagrant-packer
 
-sleep 2m
+sleep 1m
+
+systemctl restart mapr-warden
+
+sleep 5m
 
 export MAPR_TICKETFILE_LOCATION=/opt/mapr/conf/mapruserticket
 
@@ -30,5 +34,5 @@ systemctl stop mapr-posix-client-basic | true
 systemctl stop mapr-warden
 systemctl stop mapr-zookeeper
 
-wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
-echo "v2" > /tmp/maprimage
+#wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
+echo "v3" > /tmp/maprimage
