@@ -13,8 +13,7 @@
       },
       {
         "title": "Step 2 - Using Spark Machine Learning to build a model to predict flight delays",
-        "text": "step2.md",
-        "verify": "step2-verify.sh"
+        "text": "step2.md"
       },
       {
         "title": "Step 3 - Spark Streaming, Spark SQL, and MapR Database",
