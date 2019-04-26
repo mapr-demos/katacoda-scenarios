@@ -23,7 +23,7 @@ Exit the shell: `!quit`{{execute}}
 Try Apache Drill with the Drill web UI:
 
 1. Click on the Drill tab on the right.
-2. This should take you to a Drill web UI.
+2. This should take you to a Drill web UI. Login with userid mapr password mapr
 3. Click on the Query tab in the Drill web UI.  
 4. Login using userid mapr password mapr.
 5. Copy paste, or type one of the queries below next to the 1 and click submit.
