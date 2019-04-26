@@ -9,9 +9,10 @@ You can access MapR XD using the [HDFS protocol](https://mapr.com/docs/61/Admini
 
 Although you *can* use the `hadoop` command for file operations, it's much easier to interact with MapR XD using traditional filesystem commands instead. This is possible because MapR XD is POSIX compliant, which means files and directories in MapR XD have all the characteristics you're accustomed to seeing in conventional filesystems. So, you can edit files, move files, change permissions, and so on all with traditional utilities like, `vi`, `mv`, `chmod`, etc. Try it!
 
-MapR exports each cluster as the directory /mapr/<cluster name>
+MapR exports each cluster as the directory /mapr/clustername
 
-List the <cluster name> directory on MapR XD, like this: `ls /mapr`{{execute}}
+List the clustername directory on MapR XD, like this: `ls /mapr`{{execute}}
+
 List the directories on MapR XD, like this: `ls /mapr/demo.mapr.com/`{{execute}}
 
 Make a directory for data on MapR XD: `mkdir /mapr/demo.mapr.com/user/mapr/data`{{execute}}
@@ -37,7 +38,7 @@ View the new permissions: `ls -l /mapr/demo.mapr.com/user/mapr/data`{{execute}}
 
 ## Real File Semantics
 
-Files can be edited. For example, replace "Hofbräu" with "Hofbrau" using an in-place substitution: `sed -i.bak 's/NJ/New Jersey/g' /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
+Files can be edited. For example, replace "NJ" with "New Jersey" using an in-place substitution: `sed -i.bak 's/NJ/New Jersey/g' /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
 
 View change in airports data file on MapR XD:
 `cat /mapr/demo.mapr.com/user/mapr/data/airports.json`{{execute}}
