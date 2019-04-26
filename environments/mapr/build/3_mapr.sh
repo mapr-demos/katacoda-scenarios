@@ -13,10 +13,16 @@ git clone https://github.com/mapr-emea/mapr-ansible.git
 cd mapr-ansible
 git checkout katacoda
 ansible-playbook -i $MAPR_ANSIBLE_INVENTORY --extra-vars "$MAPR_ANSIBLE_EXTRA_VARS" site-cluster.yml
+cd /
+rm -Rf /opt/mapr-ansible
+
+cd /opt/
+git clone https://github.com/mapr-demos/katacoda-scenarios
+cd katacoda-scenarios
 export GIT_REV="$(git rev-parse HEAD)"
 cd /
+rm -Rf /opt/katacoda-scenarios
 
-rm -Rf /opt/mapr-ansible
 
 source /etc/profile
 #sleep 1m
