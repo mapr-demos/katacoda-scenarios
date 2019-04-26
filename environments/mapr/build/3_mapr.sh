@@ -43,5 +43,5 @@ systemctl stop mapr-posix-client-basic | true
 systemctl stop mapr-warden
 systemctl stop mapr-zookeeper
 
-#wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
+wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
 echo "Git rev $GIT_REV" > /tmp/maprimage
