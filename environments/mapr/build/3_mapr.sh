@@ -50,18 +50,18 @@ echo "Git rev $GIT_REV" > /tmp/maprimage
 
 # Zeppelin setup
 # setup Zeppelin zeppelin-0.8.1-bin-all.tgz
-#wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
-#tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-all.tgz
-#mv /opt/zeppelin-0.8.1-bin-all /opt/zeppelin
-#chown -R mapr:mapr /opt/zeppelin
+wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
+tar -C /opt/ -xzf /opt/zeppelin-0.8.1-bin-all.tgz
+mv /opt/zeppelin-0.8.1-bin-all /opt/zeppelin
+chown -R mapr:mapr /opt/zeppelin
 # Configure Zeppelin for YARN, Spark, and webui port 7000
-#echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
-#echo "export MAPR_TICKETFILE_LOCATION=/opt/mapr/conf/mapruserticket" >> /opt/zeppelin/conf/zeppelin-env.sh
-#echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
-#echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
-#echo "export SPARK_SUBMIT_OPTIONS=\"--packages graphframes:graphframes:0.7.0-spark2.3-s_2.11\"" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export ZEPPELIN_PORT=7000" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export MAPR_TICKETFILE_LOCATION=/opt/mapr/conf/mapruserticket" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export SPARK_HOME=/opt/mapr/spark/spark-2.3.1" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
+echo "export SPARK_SUBMIT_OPTIONS=\"--packages graphframes:graphframes:0.7.0-spark2.3-s_2.11\"" >> /opt/zeppelin/conf/zeppelin-env.sh
 
-#wget -P /etc/systemd/system/ https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/environments/mapr/build/zeppelin.service
+wget -P /etc/systemd/system/ https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/environments/mapr/build/zeppelin.service
 #sudo systemctl enable zeppelin
 
 # Disable annoying console email notifications
