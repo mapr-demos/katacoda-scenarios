@@ -13,7 +13,7 @@ git clone https://github.com/mapr-emea/mapr-ansible.git
 cd mapr-ansible
 git checkout katacoda
 ansible-playbook -i $MAPR_ANSIBLE_INVENTORY --extra-vars "$MAPR_ANSIBLE_EXTRA_VARS" site-cluster.yml
-
+export GIT_REV="$(git rev-parse HEAD)"
 cd /
 
 rm -Rf /opt/mapr-ansible
@@ -38,4 +38,4 @@ systemctl stop mapr-warden
 systemctl stop mapr-zookeeper
 
 #wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
-echo "v4" > /tmp/maprimage
+echo "Git rev $GIT_REV" > /tmp/maprimage
