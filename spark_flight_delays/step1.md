@@ -10,12 +10,14 @@ In Step 1 of this HOL we will use Spark SQL for data discovery of the flights da
 
 For each step of the HOL follow the instructions on the left frame before running the Zeppelin notebook code. After finishing the notebook, click on continue on the left frame, and follow the next instructions before running another notebook. 
 
-***Wait about 5 minutes for Zeppelin to download and install. note this is temporary***
+***Wait about 3 minutes for the setup script to finish***
 
 ## Copying and working with Files on MapR XD
 [MapR XD Distributed File and Object Store](https://mapr.com/products/mapr-xd/) is designed to support trillions of files, and combine analytics and operations into a single platform. MapR XD supports industry standard protocols and APIs, including POSIX, NFS, S3, and HDFS. It's easy to interact with MapR XD using traditional filesystem commands. This is possible because MapR XD is POSIX compliant, which means files and directories in MapR XD have all the characteristics you're accustomed to seeing in conventional filesystems. So, you can edit files, move files, change permissions, and so on all with traditional utilities like, `vi`, `mv`, `chmod`, etc. The ability to treat MapR XD like a conventional Unix filesystem and still benefit from features like exabyte-scale, multi-cloud mirroring, and failure recovery, means you can do things that are impossible with non-POSIX filesystems, like Hadoop, AWS S3, and Azure Blob Storage. 
 
 Make a directory for data on MapR XD: `mkdir /mapr/demo.mapr.com/user/mapr/data`{{execute}}
+
+***If you get an error here, wait a a few minutes for the setup script to finish, then try again. ***
 
 Copy flight data file from the local Linux filesystem to MapR XD: `cp ~/flightdata2018.json.gz /mapr/demo.mapr.com/user/mapr/data/.`{{execute}}
 
