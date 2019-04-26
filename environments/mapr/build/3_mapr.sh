@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export MAPR_ANSIBLE_INVENTORY="host_templates/hosts_katacoda"
-export MAPR_ANSIBLE_EXTRA_VARS="disks=/dev/vdb disk_storage_pool_size=1 virtual_machine=True mfs_heapsize_maxpercent=5 drillbit_service_env='DRILLBIT_MAX_PROC_MEM=3072m,DRILL_HEAP=1024m,DRILL_MAX_DIRECT_MEMORY=1024m,DRILLBIT_CODE_CACHE_SIZE=512m' drill_heap_size_in_mb=3072"
+export MAPR_ANSIBLE_EXTRA_VARS="disks=/dev/vdb disk_storage_pool_size=1 virtual_machine=True mfs_heapsize_maxpercent=20 drillbit_service_env='DRILLBIT_MAX_PROC_MEM=3072m,DRILL_HEAP=1024m,DRILL_MAX_DIRECT_MEMORY=1024m,DRILLBIT_CODE_CACHE_SIZE=512m' drill_heap_size_in_mb=3072"
 
 #cd /opt/
 #git clone https://github.com/mapr-emea/mapr-vagrant-packer.git
@@ -13,10 +13,16 @@ git clone https://github.com/mapr-emea/mapr-ansible.git
 cd mapr-ansible
 git checkout katacoda
 ansible-playbook -i $MAPR_ANSIBLE_INVENTORY --extra-vars "$MAPR_ANSIBLE_EXTRA_VARS" site-cluster.yml
+cd /
+rm -Rf /opt/mapr-ansible
+
+cd /opt/
+git clone https://github.com/mapr-demos/katacoda-scenarios
+cd katacoda-scenarios
 export GIT_REV="$(git rev-parse HEAD)"
 cd /
+rm -Rf /opt/katacoda-scenarios
 
-rm -Rf /opt/mapr-ansible
 
 source /etc/profile
 #sleep 1m
