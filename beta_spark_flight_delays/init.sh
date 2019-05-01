@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Login
-#echo "mapr" | maprlogin password -user mapr
+echo "mapr" | maprlogin password -user mapr
 
 # Add a mapr license needed for snapshots
 #wget -P /root https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/spark_with_zeppelin/assets/mapr_license.txt
