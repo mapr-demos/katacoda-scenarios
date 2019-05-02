@@ -43,9 +43,9 @@ mv /root/flightdelayhol/data/* .
 # Start Zeppelin
 #/opt/zeppelin/bin/zeppelin-daemon.sh start
 # Wait for Zeppelin start to complete
-#until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api); do
-#    sleep 1
-#done
+until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api); do
+    sleep 1
+done
 
 # Import notebooks into Zeppelin
 
