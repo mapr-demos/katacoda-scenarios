@@ -63,7 +63,7 @@ echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/ze
 echo "export SPARK_SUBMIT_OPTIONS=\"--packages graphframes:graphframes:0.7.0-spark2.3-s_2.11\"" >> /opt/zeppelin/conf/zeppelin-env.sh
 
 wget -P /etc/systemd/system/ https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/envfiles/zeppelin.service
-sudo systemctl enable zeppelin
+sudo systemctl disable zeppelin
 
 # Disable annoying console email notifications
 rm -f /var/spool/mail/root

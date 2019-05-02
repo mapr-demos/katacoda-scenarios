@@ -30,7 +30,7 @@
 #echo "export HADOOP_HOME=/opt/mapr/hadoop/hadoop-2.7.0" >> /opt/zeppelin/conf/zeppelin-env.sh
 
 # Start Zeppelin
-#/opt/zeppelin/bin/zeppelin-daemon.sh start
+/opt/zeppelin/bin/zeppelin-daemon.sh start
 # Wait for Zeppelin start to complete
 until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api); do
     sleep 1

@@ -41,7 +41,7 @@ mv /root/flightdelayhol/data/* .
 #echo "export SPARK_SUBMIT_OPTIONS=\"--packages graphframes:graphframes:0.7.0-spark2.3-s_2.11\"" >> /opt/zeppelin/conf/zeppelin-env.sh
 
 # Start Zeppelin
-#/opt/zeppelin/bin/zeppelin-daemon.sh start
+/opt/zeppelin/bin/zeppelin-daemon.sh start
 # Wait for Zeppelin start to complete
 until $(curl --output /dev/null --silent --head --fail http://localhost:7000/api); do
     sleep 1
