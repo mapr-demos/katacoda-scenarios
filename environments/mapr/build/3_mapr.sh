@@ -31,7 +31,7 @@ source /etc/profile
 #sleep 1m
 
 #systemctl restart mapr-warden
-# trigger build1
+# trigger build2
 
 sleep 5m
 
