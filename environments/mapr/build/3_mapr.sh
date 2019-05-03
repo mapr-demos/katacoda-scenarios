@@ -49,9 +49,6 @@ maprcli alarm clearall
 
 echo "Git rev $GIT_REV" > /tmp/maprimage
 
-# Drill workaround
-rm -f /opt/mapr/drill/drill-1.15.0/jars/3rdparty/antlr4-runtime-4.7.1.jar
-
 # Zeppelin setup
 # setup Zeppelin zeppelin-0.8.1-bin-all.tgz
 wget -P /opt http://us.mirrors.quenda.co/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz
