@@ -1,6 +1,7 @@
 #!/bin/bash
-yum install tcpdump mapr-posix-client-* -y
-systemctl restart mapr-posix-client-container
+yum install tcpdump -y
+#mapr-posix-client-* -y
+#systemctl restart mapr-posix-client-container
 #git clone https://github.com/mapr-demos/mapr-db-60-getting-started
 #postfix stop
 #rm -f /var/spool/mail/root
