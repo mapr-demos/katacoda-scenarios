@@ -30,7 +30,7 @@ Try Apache Drill with the Drill web UI:
 
 Example queries:
 
-<pre><code>select id, src, dst, depdelay, prediction from dfs.`/user/mapr/flighttable` where id like 'ATL%';</code></pre>
+<pre><code>select id, src, dst, depdelay, prediction from dfs.`/user/mapr/flighttable` where id like 'ATL%' limit 20;</code></pre>
 
 <pre><code>select crsdephour, count(depdelay) as countdelay from dfs.`/user/mapr/flighttable` where depdelay > 40 group by crsdephour order by crsdephour;</code></pre>
 
