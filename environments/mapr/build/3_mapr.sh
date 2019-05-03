@@ -47,6 +47,10 @@ maprcli alarm clearall
 #wget -P /tmp https://raw.githubusercontent.com/mapr-demos/katacoda-scenarios/master/envfiles/mapr_license.txt
 #maprcli license add -license /tmp/mapr_license.txt -is_file true
 
+# Drill AntLR version conflict, remove antlr lib from mapr dbshell
+cp /opt/mapr/bin/mapr-config.sh /opt/mapr/bin/mapr-config.sh.bak
+sed -e '126d' /opt/mapr/bin/mapr-config.sh.bak > /opt/mapr/bin/mapr-config.sh
+
 echo "Git rev $GIT_REV" > /tmp/maprimage
 
 # Zeppelin setup
