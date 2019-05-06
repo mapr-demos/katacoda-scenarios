@@ -7,6 +7,7 @@ export MAPR_ANSIBLE_EXTRA_VARS="disks=/dev/vdb disk_storage_pool_size=1 virtual_
 #git clone https://github.com/mapr-emea/mapr-vagrant-packer.git
 #cd mapr-vagrant-packer
 #git checkout 9ec74c52e56a0dbbee325cabb34b5cf94e48e8bc
+#add a line for test
 
 yum install unzip -y
 
